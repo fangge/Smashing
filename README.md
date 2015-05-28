@@ -1,3 +1,3 @@
 # Smashing
 Smashing front-end project 
-Smashing 网站前端文件，grunt构建
+Smashing 缃戠珯鍓嶇鏂囦欢锛実runt鏋勫缓
