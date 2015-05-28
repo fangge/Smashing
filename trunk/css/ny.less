@@ -1,0 +1,63 @@
+.ny{
+  h1{position: relative;top:0;left:0;
+    .sprite-nav,.sprite-search{display: block;}
+  }
+  .sprite-repost{transition: none;position:fixed;top:562px;right:17%;z-index: 80;cursor:pointer}
+  .sprite-repost:hover{background-position:0 -193px;}
+  aside{background: none;margin-right: 64px;float:right}
+  .as-art{width: 150px;margin: 0 auto}
+  .as-art-info{
+    margin-bottom: 80px;
+    h2{width:70px;color: #3F3F3F;font-size: 14px;margin: 0;padding-bottom: 6px;border-bottom: 2px solid #3F3F3F}
+    p{color: #3F3F3F;font-size: 14px;margin-top:15px;}
+    .sprite{transition: none;}
+  }
+  article{width: 804px;margin-right: 0;float:right}
+  .sprite-download{margin-right: 30px;}
+  .sprite-download:hover{background-position: -285px 0}
+  .sprite-share:hover{background-position: -413px -22px}
+  .art-cont-title{font-size: 28px;color: #3F3F3F;line-height: 28px;margin-bottom: 18px;font-weight: 400;background: none;height: auto;box-shadow: none;position: static}
+  .art-cont-intro{padding: 15px 19px;background: #3F3F3F;color: #fff;font-size: 14px;line-height: 22px;margin: 0;
+    ul{margin: 26px 0 0;padding: 0}
+    li{list-style: none;color: #F2C526;font-size: 14px;line-height: 14px;margin-bottom: 10px;}
+  }
+  .art-cont{
+    h2{display:inline-block;color: #F2C526;font-size: 14px;padding: 2px 16px;background: #3F3F3F;width: auto;white-space: nowrap;margin-bottom: 22px;}
+    p{color: #3F3F3F;font-size: 14px;line-height: 22px;padding-left: 18px;}
+    ul{margin: 0;padding-left:18px;}
+    li{list-style: none}
+  }
+  .sprite-end{margin: 20px 0 50px}
+  .art-bottom-cont,{
+    h3{width:70px;color: #3F3F3F;font-size: 14px;margin: 0;padding-bottom: 6px;border-bottom: 2px solid #3F3F3F;margin-bottom: 20px;}
+  }
+  .relate-post{
+    a{display: block;width: 100%;}
+  }
+  .art-bottom-img{display: block;width:236px;height: 110px;float:left;margin-right: 50px;}
+  .art-bottom-title{color: #3E3A39;font-size: 20px;margin: 0}
+  .art-bottom-intro{color: #565656;font-size: 14px;line-height: 25px;}
+  /*评论*/
+  #ds-thread #ds-reset .ds-toolbar{margin: 30px 0 0}
+  #ds-thread #ds-reset .ds-user-name{color: #231815!important;font-size: 14px;font-weight: 700}
+  #ds-thread #ds-reset a.ds-visitor-name{  position: absolute;
+    left: 0;
+    top: 112px;
+    width: 50px;
+    overflow: hidden;
+    display: block;
+    height: 54px;}
+  @media screen and (max-width: 1200px){
+    article{width:100%;}
+    .sprite-repost{right:5%}
+    aside{display: none}
+    .relate-post{padding-top: 20px;}
+    .art-bottom-img{float: none;width: 100%;height: auto}
+    .sprite-repost{
+      -webkit-transform: scale(0.75);
+      -moz-transform: scale(0.75);
+      -ms-transform: scale(0.75);
+      -o-transform: scale(0.75);
+      transform: scale(0.75);}
+  }
+}
