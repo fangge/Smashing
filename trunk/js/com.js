@@ -4,6 +4,10 @@
  * Build: 2015/5/21 15:32
  */
 $(function () {
+    $("html").niceScroll({
+        cursorborder:'0',
+        scrollspeed:'100'
+    });
     var bgFun = {
         /**
          * 滚动效果
@@ -11,15 +15,19 @@ $(function () {
         scrollShow:function(){
             $(window).scroll(function(){
                 var t = $(window).scrollTop();
-                if(t>0){
+                if(t>=521){
                     $('.index #index-title').css({'position':'fixed','top':0,'left':0})
-                        .find('.sprite-nav,.sprite-search').show()
+                        .find('.sprite-nav,.sprite-search').fadeIn(200)
+                    $('article, aside').css('margin-top','186px')
                 }else{
                     $('.index #index-title')
                         .css({'position':'relative'})
-                        .find('.sprite-nav,.sprite-search').hide()
+                        .find('.sprite-nav,.sprite-search').fadeOut(200)
+                    $('article, aside').css('margin-top','100px')
                 }
             })
+
+
         },
         /**
          * 导航显示
