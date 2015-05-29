@@ -16,3 +16,8 @@ Smashing 网站前端文件，grunt构建
   * ny.html 文章页
   * index.html 首页
 * psd 设计稿
+
+## 相关注意
+
+1. 本项目通过grunt构建，直接合成js和css，配置时请注意
+2. 内页中的多说评论配置，data-thread-key="请将此处替换成文章在你的站点中的ID"，data-title="请替换成文章的标题"，data-url="请替换成文章的网址"
