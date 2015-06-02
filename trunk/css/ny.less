@@ -1,9 +1,23 @@
+.stitches-sprite(@x: 0, @y: 0, @width: 0, @height: 0) {
+  background-position: @x @y;
+  width: @width;
+  height: @height;
+}
+.sprite-reposthov {
+  .stitches-sprite(0, -193px, 60px, 60px);
+}
+.sprite-downloadhov {
+  .stitches-sprite(-285px, 0, 15px, 26px);
+}
+.sprite-sharehov {
+  .stitches-sprite(-413px, -22px, 15px, 22px);
+}
 .ny{
   h1{position: relative;top:0;left:0;
     .sprite-nav,.sprite-search{display: block;}
   }
   .sprite-repost{transition: none;position:fixed;top:562px;right:17%;z-index: 80;cursor:pointer}
-  .sprite-repost:hover{background-position:0 -193px;}
+  .sprite-repost:hover{.sprite-reposthov}
   aside{background: none;margin-right: 64px;float:right}
   .as-art{width: 150px;margin: 0 auto}
   .as-art-info{
@@ -14,8 +28,8 @@
   }
   article{width: 804px;margin-right: 0;float:right}
   .sprite-download{margin-right: 30px;}
-  .sprite-download:hover{background-position: -285px 0}
-  .sprite-share:hover{background-position: -413px -22px}
+  .sprite-download:hover{.sprite-downloadhov}
+  .sprite-share:hover{.sprite-sharehov}
   .art-cont-title{font-size: 28px;color: #3F3F3F;line-height: 28px;margin-bottom: 18px;font-weight: 400;background: none;height: auto;box-shadow: none;position: static}
   .art-cont-intro{padding: 15px 19px;background: #3F3F3F;color: #fff;font-size: 14px;line-height: 22px;margin: 0;
     ul{margin: 26px 0 0;padding: 0}

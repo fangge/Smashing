@@ -1,3 +1,23 @@
+.stitches-sprite(@x: 0, @y: 0, @width: 0, @height: 0) {
+  background-position: @x @y;
+  width: @width;
+  height: @height;
+}
+.sprite-sina-hov {
+  .stitches-sprite(-156px, -172px, 20px, 16px);
+}
+.sprite-weixin-hov {
+  .stitches-sprite(-741px, -172px, 21px, 19px);
+}
+.sprite-yixin-hov {
+  .stitches-sprite(-741px, -191px, 16px, 16px);
+}
+.sprite-videohov {
+  .stitches-sprite(-629px, -172px, 21px, 21px);
+}
+.sprite-radiohov {
+  .stitches-sprite(-655px, -133px, 26px, 26px);
+}
 /*!=header=*/
 header{
   .main{height: 520px;}
@@ -51,9 +71,10 @@ h1{width: 100%;height: 86px;background: #e4b524;position: relative;z-index: 60; 
 .art-share{float:right}
 .art-share i,.art-share a{display: inline-block;margin-right: 9px;color: #6f6e6e;font-style:normal}
 .art-share a{cursor:pointer;transition:none}
-.sprite-sina:hover{background-position: -741px -149px}
-.sprite-weixin:hover{background-position: -741px -184px}
-.sprite-yixin:hover{background-position: -171px -184px}
+
+.sprite-sina:hover{.sprite-sina-hov}
+.sprite-weixin:hover{.sprite-weixin-hov}
+.sprite-yixin:hover{.sprite-yixin-hov}
 
 .art-img-wrap{display:block;background: #efefef;width: 100%;height: 255px;margin-bottom: 75px;position: relative}
 .art-img-tag{color: #b6b6b6;font-size: 22px;position: absolute;top:20px;left:20px}
@@ -66,7 +87,7 @@ h1{width: 100%;height: 86px;background: #e4b524;position: relative;z-index: 60; 
 .art-img-wrap:hover{
   background: #f7f8f8;
   .art-img-percent{color: #f9a717}
-  .sprite-video{background-position: -650px -165px}
+  .sprite-video{.sprite-videohov}
 }
 .as-col{margin: 0 14px 50px;}
 .as-title{font-size: 20px;color: #232323}
@@ -166,7 +187,7 @@ footer .qrcode-wrap{top:-150px;}
   .mail-list-name{display:block;width:100%;height:100%;color: #898989;font-size: 24px;margin: 0;cursor:pointer}
 }
 .mail-list li :checked + .mail-list-name{color: #000}
-.mail-list li :checked + .mail-list-name i{background-position: -655px -133px;}
+.mail-list li :checked + .mail-list-name i{.sprite-radiohov}
 #select-all{color: #898989;font-size: 14px;position: absolute;right:44px;top:40px;}
 .pop2{
   width: 500px;padding:0 75px;margin-left: -325px;height: 320px;margin-top: -160px;
