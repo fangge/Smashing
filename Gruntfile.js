@@ -53,7 +53,7 @@ module.exports = function(grunt) {
                  dest: "build/css/main.css"
                  },
             js:{
-                src: ["build/js/jquery-1.11.3.min.js","build/js/com.js"],
+                src: ["build/js/jquery-1.11.3.min.js","build/js/jquery.nicescroll.min.js","build/js/com.js"],
                 dest: "build/js/main.js"
             }
         },
