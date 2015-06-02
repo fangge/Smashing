@@ -60,6 +60,14 @@ $(function () {
                 $(this).css('z-index','101')
                 setTimeout(function(){$('#mask,#qrwrap2').stop().fadeIn(100);},420)
             })
+            $('.sprite-weixin').click(function(){
+                $(this).closest('.art-bottom').find('.qrwrap3').stop().fadeIn(100)
+                $('#mask').stop().fadeIn(100)
+            })
+            $('.sprite-yixin').click(function(){
+                $(this).closest('.art-bottom').find('.qrwrap4').stop().fadeIn(100)
+                $('#mask').stop().fadeIn(100)
+            })
         },
         /**
          * 分享信息

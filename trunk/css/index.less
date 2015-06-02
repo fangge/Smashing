@@ -70,7 +70,7 @@ h1{width: 100%;height: 86px;background: #e4b524;position: relative;z-index: 60; 
 }
 .as-col{margin: 0 14px 50px;}
 .as-title{font-size: 20px;color: #232323}
-.index .login{display: block;width: 280px;height: 50px;line-height: 50px;text-align: center;cursor:pointer;background: #f1c625;color: #fffffc;font-size: 16px;margin: 24px auto 12px;}
+.index aside .login,.ny aside .login{display: block;width: 280px;height: 50px;line-height: 50px;text-align: center;cursor:pointer;background: #f1c625;color: #fffffc;font-size: 16px;margin: 24px auto 12px;}
 .as1{width: 100%;height: 312px;background: #fff;box-shadow: 0 0 4px #e2e2e2;position: relative;
   p{text-align: center;color: #373737;font-size: 14px;margin: 0}
 }
@@ -109,15 +109,19 @@ h1{width: 100%;height: 86px;background: #e4b524;position: relative;z-index: 60; 
   i{position: absolute;right: 0;bottom:-84px;}
 }
 .sprite-about{position: absolute;right:60px;top:140px;}
-.qrcode-wrap{position: absolute;top:-150px;display: none;z-index: 101;
+.qrcode-wrap{position: absolute;display: none;z-index: 101;
   p{font-size: 18px;color: #595757;margin: 18px 0 10px 50px;}
   blockquote{margin:0 0 10px 50px;color: #595757;font-size: 14px;
     strong{font-weight: bold;}
   }
   img{display: block;margin-left: 160px;}
 }
+footer .qrcode-wrap{top:-150px;}
+.art-bottom .qrcode-wrap{top:-222px;}
 #qrwrap{left:116px;}
 #qrwrap2{left:344px;}
+.qrwrap3{left:444px;}
+.qrwrap4{left:471px;}
 #index-wx,#index-yixin{position: relative;}
 .more-wrap{position: fixed;width: 100%;height: 100%;z-index: 102;display: none;top:0;
   .more-bg{background: #fff;opacity: .95;width: 100%;height: 100%;position: absolute;top:0;left:0}
@@ -212,7 +216,7 @@ h1{width: 100%;height: 86px;background: #e4b524;position: relative;z-index: 60; 
     position: relative;}
   .art-time{top:34px;left:0}
   .art-intro{position: static;width: 100%;font-size: 18px;line-height: 1.5}
-  .art-bottom{width:100%;position: static}
+  .art-bottom{width:100%;position:relative;top:0;left:0}
   .art-tag i{font-size: 14px;}
   .art-share a, .art-share i{font-size: 14px;}
   h1 .main-title{width: 57.22%;margin-left: -28%}
@@ -248,4 +252,6 @@ h1{width: 100%;height: 86px;background: #e4b524;position: relative;z-index: 60; 
   .nav-col ul{
     width: 90%;margin: 0 auto;padding: 0;
   }
+  #qrwrap2{
+    left: 162px;}
 }
