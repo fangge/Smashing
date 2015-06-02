@@ -4,10 +4,13 @@
  * Build: 2015/5/21 15:32
  */
 $(function () {
-    $("html").niceScroll({
-        cursorborder:'0',
-        scrollspeed:'100'
-    });
+    if($('body').hasClass('index')){
+        $("html").niceScroll({
+            cursorborder:'0',
+            scrollspeed:'100'
+        });
+    }
+
     var bgFun = {
         /**
          * 滚动效果
@@ -45,13 +48,18 @@ $(function () {
          */
         wxShow:function(){
             $('#mask,#more-wrap .more-bg').bind('click',function(){
-                $('#mask,#qrwrap').fadeOut(200)
+                $('#mask,.qrcode-wrap').fadeOut(200);
+                $('#index-wx,#index-yixin').css('z-index','50')
                 $('.pop').fadeOut(200)
             });
             $('#index-wx').click(function(){
-                $('#mask,#qrwrap').stop().fadeIn(200);
+                $(this).css('z-index','101')
+                setTimeout(function(){$('#mask,#qrwrap').stop().fadeIn(100);},420)
             })
-
+            $('#index-yixin').click(function(){
+                $(this).css('z-index','101')
+                setTimeout(function(){$('#mask,#qrwrap2').stop().fadeIn(100);},420)
+            })
         },
         /**
          * 分享信息
@@ -60,9 +68,9 @@ $(function () {
             var title = encodeURIComponent("Samshing"),
                 intro = encodeURIComponent("超级喜欢的网站，分享给大家，保证很有料哦~！（分享来自@xxxxxxxxxx网）"),
                 url = encodeURIComponent(document.location),
-                pic= encodeURIComponent("http://www.mrfangge.com/bgptv4/img/share.jpg");
-            $('.sprite-index-sina').attr('href','//v.t.sina.com.cn/share/share.php?title='+intro+'&url='+url+'&pic='+pic);
-            $('.sprite-index-yx').attr('href','//open.yixin.im/share?title='+title+'&url='+url+'&pic='+pic+'&desc='+intro)
+                pic= encodeURIComponent("http://www.mrfangge.com/bgptv6/img/share.jpg");
+            $('.sprite-index-sina,.sprite-sina').attr('href','//v.t.sina.com.cn/share/share.php?title='+intro+'&url='+url+'&pic='+pic);
+            //$('.sprite-index-yx,.sprite-yixin').attr('href','//open.yixin.im/share?title='+title+'&url='+url+'&pic='+pic+'&desc='+intro)
         },
         init:function(){
             this.scrollShow();

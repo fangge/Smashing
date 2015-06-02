@@ -262,12 +262,6 @@ body {
   height: @height;
 }
 
-.stitches-sprite(@x: 0, @y: 0, @width: 0, @height: 0) {
-  background-position: @x @y;
-  width: @width;
-  height: @height;
-}
-
 .sprite {
   background-image: url(../img/spritesheet.png);    background-repeat: no-repeat;
   display: block;
@@ -392,12 +386,16 @@ body {
     .stitches-sprite(-741px, -133px, 20px, 16px);
   }
 
+  &.sprite-sina-hov {
+    .stitches-sprite(-741px, -149px, 20px, 16px);
+  }
+
   &.sprite-tag {
     .stitches-sprite(-428px, -22px, 14px, 14px);
   }
 
   &.sprite-tag2 {
-    .stitches-sprite(-741px, -149px, 24px, 24px);
+    .stitches-sprite(-192px, -165px, 24px, 24px);
   }
 
   &.sprite-telphone {
@@ -405,25 +403,34 @@ body {
   }
 
   &.sprite-usename {
-    .stitches-sprite(-171px, -173px, 21px, 28px);
+    .stitches-sprite(-216px, -165px, 21px, 28px);
   }
 
   &.sprite-video {
-    .stitches-sprite(-192px, -173px, 21px, 21px);
+    .stitches-sprite(-629px, -165px, 21px, 21px);
   }
 
   &.sprite-videohov {
-    .stitches-sprite(-213px, -173px, 21px, 21px);
+    .stitches-sprite(-650px, -165px, 21px, 21px);
   }
 
   &.sprite-weixin {
-    .stitches-sprite(-629px, -173px, 21px, 19px);
+    .stitches-sprite(-741px, -165px, 21px, 19px);
+  }
+
+  &.sprite-weixin-hov {
+    .stitches-sprite(-741px, -184px, 22px, 19px);
   }
 
   &.sprite-yixin {
-    .stitches-sprite(-234px, -173px, 16px, 16px);
+    .stitches-sprite(-237px, -165px, 16px, 16px);
+  }
+
+  &.sprite-yixin-hov {
+    .stitches-sprite(-171px, -184px, 16px, 16px);
   }
 }
+
 
 html,body {
   margin: 0;
