@@ -36,11 +36,14 @@ $(function () {
          * 导航显示
          */
         navShow:function(){
-            $('.nav-open').bind('click',function(){
+            $('#nav-open').bind('click',function(){
                 $('#more-wrap').fadeIn(200)
             })
-            $('#nav-close').bind('click',function(){
-                $('#more-wrap').fadeOut(200)
+            $('#search-open').bind('click',function(){
+                $('#search-wrap').fadeIn(200)
+            })
+            $('.nav-close').bind('click',function(){
+                $(this).closest('.more-wrap').fadeOut(200)
             })
         },
         /**

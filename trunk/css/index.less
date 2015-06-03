@@ -21,7 +21,8 @@
 /*!=header=*/
 header{
   .main{height: 520px;}
-  .banner{position: absolute;top:0;left:50%;margin-left: -960px;}
+  .banner,.banner_s{position: absolute;top:0;left:50%;-webkit-transform:translate3d(-50%,0,0);-moz-transform:translate3d(-50%,0,0);-ms-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0)}
+  .banner_s{display: none}
 }
 .sprite-nav,.sprite-search{position: absolute;top:30px;cursor:pointer;
   -webkit-transform: scale(0.8);
@@ -146,7 +147,7 @@ footer .qrcode-wrap{top:-150px;}
 #index-wx,#index-yixin{position: relative;}
 .more-wrap{position: fixed;width: 100%;height: 100%;z-index: 102;display: none;top:0;
   .more-bg{background: #fff;opacity: .95;width: 100%;height: 100%;position: absolute;top:0;left:0}
-  .sprite-moreclose,.sprite-search2{position: absolute;top:-75px;  -webkit-transform: scale(0.8);
+  .sprite-moreclose,.sprite-search2{position: absolute;top:-75px;  -webkit-transform: scale(0.8);cursor: pointer;
     -moz-transform: scale(0.8);
     -ms-transform: scale(0.8);
     -o-transform: scale(0.8);
@@ -158,6 +159,7 @@ footer .qrcode-wrap{top:-150px;}
   .as3{width: 236px;color: #595757;font-size: 18px;line-height: 35px;}
   .as-intro{padding-left: 25px; border-left:1px solid #c2c2c2;margin-left: 107px;}
 }
+
 .nav-col{
   h2{font-size: 24px;color: #3E3A39;margin: 110px 0 70px 0;}
   .sprite,span{float:left;position:relative;}
@@ -171,6 +173,23 @@ footer .qrcode-wrap{top:-150px;}
 .more-share{display: block;width: 295px;height: 90px;line-height: 90px;border-bottom:1px solid #c2c2c2;margin-bottom: 20px;font-family: "Candara",sans-serif;font-size: 18px;color: #3C4148;
   .sprite{display: inline-block;position: relative;top:20px;margin-right: 24px;}
 }
+#search-wrap{
+  .sprite-moreclose,.sprite-search2{top:-2px;}
+  .search-input-wrap{width: 100%;height: 28px;padding-bottom: 8px;border-bottom:1px solid #9FA0A0;margin:29px 0 40px; }
+  .search-txt{height: 28px;line-height: 28px;width: 94%;border: 0;background: 0;padding: 0 2% 0 0;color: #F9A818;font-size: 24px;text-align: right;border-right: 1px solid #F9A818}
+  .search-txt::-webkit-input-placeholder{color: #B5B5B6;}
+  .search-txt:-ms-input-placeholder{color: #B5B5B6;}
+  .search-txt::-moz-placeholder{color: #B5B5B6;}
+  .nav-col h2{margin: 0 0 33px}
+}
+.result-wrap{width: 100%;height: 140*3+60*2+15px;overflow-y:scroll }
+.search-col{width: 442+296+20px;margin-bottom: 60px;}
+.search-img{float:left;margin-right: 20px}
+.search-title{font-size: 22px;color: #3E3A39;display: block;margin-bottom: 22px;}
+.search-intro{color: #565656;font-size: 14px;line-height: 24px;height: 68px;overflow: hidden;
+  strong{color: #F9A818}
+}
+.search-author,.search-time{color: #282828;font-weight: bold;}
 .pop{
   position: fixed;left:50%;top:50%;z-index: 999;background: #fff;display: none;
   .pop-btn{display: block;margin: 20px auto;width: 260px;height: 50px;line-height: 50px;color: #fff;background: #F2C526;text-align: center;font-size: 24px;cursor:pointer}
@@ -207,12 +226,8 @@ footer .qrcode-wrap{top:-150px;}
   .main{width:auto;margin:0 3.333% }
   article{width: 100%;}
   header,header .main{height: 450px;}
-  header .banner{  height: 100%;  width: auto;
-    -webkit-transform: translate3D(-50%,0,0);
-    -moz-transform: translate3D(-50%,0,0);
-    -ms-transform: translate3D(-50%,0,0);
-    -o-transform: translate3D(-50%,0,0);
-    transform: translate3D(-50%,0,0);margin: 0}
+  header .banner{ display: none}
+  header .banner_s{display: block;width: 100%;  height: 100%;}
   .head-date{top:130px;}
   .head-title{top:170px;width: 83%}
   .title-wrap{width: 92%;font-size: 18px;}
@@ -227,7 +242,9 @@ footer .qrcode-wrap{top:-150px;}
   .more-wrap .sprite-nav,.more-wrap .sprite-search{top:-145px;}
   .sprite-moreclose,.sprite-search2{top:-100px;}
   h1{height: 65px;}
-  h1 .main-title{top:20px;}
+  .index,.ny{
+    h1 .main-title{width: 57.22%;margin-left: -28%;}
+  }
   .art-col{height: auto;}
   .art-author{display: none}
   .art-img{width: 100%;position: static}
@@ -240,7 +257,7 @@ footer .qrcode-wrap{top:-150px;}
   .art-bottom{width:100%;position:relative;top:0;left:0}
   .art-tag i{font-size: 14px;}
   .art-share a, .art-share i{font-size: 14px;}
-  h1 .main-title{width: 57.22%;margin-left: -28%}
+
   aside{width: 100%;}
   .mail-area{text-align: center}
   .mail-area i,.mail-area input{display: inline-block;float:none}
