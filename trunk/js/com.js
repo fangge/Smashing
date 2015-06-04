@@ -16,14 +16,14 @@ $(function () {
          * 滚动效果
          */
         scrollShow:function(){
-
+            var w = $(window).width();
             $(window).scroll(function(){
                 var t = $(window).scrollTop();
-                var w = $(window).width();
                 var l
                 w >1200?l=521:l=parseInt($('header').height())
                 bgFun.fixNav(t,l)
             })
+
         },
         /**
          * 滚动判断
@@ -36,7 +36,8 @@ $(function () {
                 mTop = '186px';
                 fmTop='100px';
             }else{
-                mTop = '40%';
+
+                mTop = '30%';
                 fmTop='15%';
             }
             if(scrollY>=fixY){
