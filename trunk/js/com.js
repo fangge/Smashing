@@ -16,33 +16,51 @@ $(function () {
          * 滚动效果
          */
         scrollShow:function(){
+
             $(window).scroll(function(){
                 var t = $(window).scrollTop();
-                if(t>=521){
-                    $('.index #index-title').css({'position':'fixed','top':0,'left':0})
-                        .find('.sprite-nav,.sprite-search').fadeIn(200)
-                    $('article, aside').css('margin-top','186px')
-                }else{
-                    $('.index #index-title')
-                        .css({'position':'relative'})
-                        .find('.sprite-nav,.sprite-search').fadeOut(200)
-                    $('article, aside').css('margin-top','100px')
-                }
+                var w = $(window).width();
+                var l
+                w >1200?l=521:l=parseInt($('header').height())
+                bgFun.fixNav(t,l)
             })
-
-
+        },
+        /**
+         * 滚动判断
+         * @param scrollY
+         * @param fixY
+         */
+        fixNav:function(scrollY,fixY){
+            var mTop,fmTop;
+            if(fixY ==521){
+                mTop = '186px';
+                fmTop='100px';
+            }else{
+                mTop = '40%';
+                fmTop='15%';
+            }
+            if(scrollY>=fixY){
+                $('.index #index-title').css({'position':'fixed','top':0,'left':0})
+                    .find('.sprite-nav,.sprite-search').fadeIn(200)
+                $('article, aside').css('margin-top',mTop)
+            }else{
+                $('.index #index-title')
+                    .css({'position':'relative'})
+                    .find('.sprite-nav,.sprite-search').fadeOut(200)
+                $('article, aside').css('margin-top',fmTop)
+            }
         },
         /**
          * 导航显示
          */
         navShow:function(){
-            $('.nav-open').bind('click',function(){
+            $('.nav-open').on('click',function(){
                 $('#more-wrap').fadeIn(200)
             })
-            $('.search-open').bind('click',function(){
+            $('.search-open').on('click',function(){
                 $('#search-wrap').fadeIn(200)
             })
-            $('.nav-close').bind('click',function(){
+            $('.nav-close').on('click',function(){
                 $(this).closest('.more-wrap').fadeOut(200)
             })
         },

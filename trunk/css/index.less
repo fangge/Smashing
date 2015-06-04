@@ -224,14 +224,27 @@ footer .qrcode-wrap{top:-150px;}
 @media screen and (max-width: 1200px) {
   #wrap{width:100%;min-width:100%;}
   .main{width:auto;margin:0 3.333% }
-  article{width: 100%;}
-  header,header .main{height: 450px;}
+  article{width: 100%;margin-top: 15%}
+  header{height: auto}
+  header .main{position: absolute;height: 100%;top:0;left:0;z-index: 50;width: 96%;margin: 0 2%}
   header .banner{ display: none}
-  header .banner_s{display: block;width: 100%;  height: 100%;}
-  .head-date{top:130px;}
-  .head-title{top:170px;width: 83%}
+  header .banner_s{display: block;width: 100%;  height: 100%;position: relative;z-index: 40}
+  .head-date{top:30%;
+    left:0;
+    -webkit-transform: scale(0.75);;
+    -moz-transform: scale(0.75);;
+    -ms-transform: scale(0.75);;
+    -o-transform: scale(0.75);;
+    transform: scale(0.75);}
+  .head-title{top:37%;left:-4%;width: 83%;    -webkit-transform: scale(0.75);;
+    -moz-transform: scale(0.75);;
+    -ms-transform: scale(0.75);;
+    -o-transform: scale(0.75);;
+    transform: scale(0.75);}
   .title-wrap{width: 92%;font-size: 18px;}
-  .head-intro{top:273px;width:83%;}
+  .head-intro{top: 71%;
+    width: 83%;
+    left: 7%;}
   .sprite-nav,.sprite-search,.more-wrap .sprite-moreclose,.more-wrap .sprite-search2{
     -webkit-transform: scale(0.75);;
     -moz-transform: scale(0.75);;
@@ -292,4 +305,9 @@ footer .qrcode-wrap{top:-150px;}
   }
   #qrwrap2{
     left: 162px;}
+  #search-wrap .search-txt{width: 88%}
+  .search-title-wrap{margin-bottom: 10%}
+  .search-col{width: 100%;}
+  .search-img{float:none;width: 100%;}
+  .search-intro{margin: 0}
 }
