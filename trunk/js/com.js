@@ -59,6 +59,7 @@ $(function () {
                 $('#more-wrap').fadeIn(200)
             })
             $('.search-open').on('click',function(){
+                $('#more-wrap').hide();
                 $('#search-wrap').fadeIn(200)
             })
             $('.nav-close').on('click',function(){
