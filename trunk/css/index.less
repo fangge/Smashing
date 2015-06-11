@@ -261,7 +261,7 @@ footer .qrcode-wrap{top:-150px;}
     h1#index-title{height: 60px;
       .sprite-nav,.sprite-search{top:16px;}
     }
-    h1 .main-title{width: 57.22%;margin-left: -28%;top:1rem;
+    h1 .main-title{width: 57.22%;margin-left: -28%;top:1rem;font-size: 1em;
       -webkit-transform: scale(0.8);
       -moz-transform: scale(0.8);
       -ms-transform: scale(0.8);
@@ -294,16 +294,28 @@ footer .qrcode-wrap{top:-150px;}
     -moz-transform: scale(0.5);
     -ms-transform: scale(0.5);
     -o-transform: scale(0.5);
-    transform: scale(0.5);margin: 0 auto;padding: 0;position: static;}
-  .phone,.copyright,.qrcode-wrap{
+    transform: scale(0.5);margin: 0 auto;padding: 0;  position: relative;
+    top: 0;
+    left: -5%;}
+  .qrcode-wrap{
     -webkit-transform: scale(0.7);
     -moz-transform: scale(0.7);
     -ms-transform: scale(0.7);
     -o-transform: scale(0.7);
     transform: scale(0.7);}
   .phone,.copyright,.sprite-about{position: relative;margin: 0;left:0}
-  .copyright{position: relative;top: -22px;  left: 0;  text-align: center}
-  .phone{text-align: center;top:-10px;right:0;margin-bottom: 10px;}
+  .copyright{  position: relative;
+    top: -22px;
+    left: 0;
+    font-size: 1em;text-align: center}
+  .phone{  top: -10px;
+    right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    transform: none;
+    font-size: 2em;
+    font-weight: 400;}
   .sprite-about{margin: 0 auto;left:0;top:0}
   .qrcode-wrap{left:-3%;top:-123px;}
   .sprite-phone{display: none;}
@@ -321,5 +333,7 @@ footer .qrcode-wrap{top:-150px;}
   .search-col{width: 100%;}
   .search-img{float:none;width: 100%;}
   .search-intro{margin: 0}
+  .index .mail-area i{float:left;}
+  .index .mail-area .mail-txt{float:left;width: 75%;}
 }
 #search-num{font-style: normal}
