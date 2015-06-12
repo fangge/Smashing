@@ -12,6 +12,7 @@
 .sprite-sharehov {
   .stitches-sprite(-413px, -22px, 15px, 22px);
 }
+.share-pop{cursor: pointer}
 .ny{
   h1{position: fixed;top:0;left:0;
     .sprite-nav,.sprite-search{display: block;}
@@ -51,16 +52,19 @@
   .art-bottom-img{display: block;width:236px;height: 110px;float:left;margin-right: 50px;}
   .art-bottom-title{color: #3E3A39;font-size: 20px;margin: 0}
   .art-bottom-intro{color: #565656;font-size: 14px;line-height: 25px;}
+  .pop4{
+    padding: 30px;border-radius: 10px;margin-top: -150px;margin-left: -286px;
+    ul{margin: 0;padding: 0}
+    li{list-style:none;float:left;text-align: center;width: 130px;
+      i,img{display: block;margin: 0 auto;}
+      i{margin-bottom: 10px;}
+    }
+    .line{margin: 0 30px;padding:0 30px;border-left:1px solid #c2c2c2;border-right:1px solid #c2c2c2}
+  }
   /*评论*/
   #ds-thread #ds-reset .ds-toolbar{margin: 30px 0 0}
   #ds-thread #ds-reset .ds-user-name{color: #231815!important;font-size: 14px;font-weight: 700}
-  #ds-thread #ds-reset a.ds-visitor-name{  position: absolute;
-    left: 0;
-    top: 112px;
-    width: 50px;
-    overflow: hidden;
-    display: block;
-    height: 54px;}
+  #ds-thread #ds-reset a.ds-visitor-name{  position: absolute;  left: 0;  top: 112px;  width: 50px;  overflow: hidden;  display: block;  height: 54px;}
   @media screen and (max-width: 1200px){
     article{width:100%;}
     .sprite-repost{right:5%}

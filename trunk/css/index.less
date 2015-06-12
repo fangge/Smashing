@@ -128,7 +128,9 @@ header{
   li{list-style: none;float:left;margin-right: 10px;}
 }
 .copyright{color: #AEADAD;font-size: 12px;position: absolute;top:148px;left:45px}
-.phone{color: #FF7300;font-size: 58px;font-weight: bold;position: absolute;right:20px;top:20px;font-family: "Impact",Arial,sans-serif;
+.phone{
+  position: absolute;right:20px;top:50px;
+  a{color: #FF7300;font-size: 58px;font-family: "Impact",Arial,sans-serif}
   i{position: absolute;right: 0;bottom:-84px;}
 }
 .sprite-about{position: absolute;right:60px;top:140px;}
@@ -298,11 +300,27 @@ footer .qrcode-wrap{top:-150px;}
     top: 0;
     left: -5%;}
   .qrcode-wrap{
-    -webkit-transform: scale(0.7);
-    -moz-transform: scale(0.7);
-    -ms-transform: scale(0.7);
-    -o-transform: scale(0.7);
-    transform: scale(0.7);}
+    width: 86%!important;
+    background: #fff;
+    border-radius: 8px;
+    left: 50%!important;;
+    top: 50%!important;;
+    -webkit-transform: translate3d(-50%,-50%,0);
+    -moz-transform: translate3d(-50%,-50%,0);
+    -ms-transform: translate3d(-50%,-50%,0);
+    -o-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
+    position: fixed;
+    p{
+      margin: 18px 0 0;
+      text-align: center;
+    }
+    blockquote{
+      margin: 15px 0;
+      text-align: center;
+    }
+    img{margin: 0 auto}
+  }
   .phone,.copyright,.sprite-about{position: relative;margin: 0;left:0}
   .copyright{  position: relative;
     top: -22px;
@@ -317,7 +335,6 @@ footer .qrcode-wrap{top:-150px;}
     font-size: 2em;
     font-weight: 400;}
   .sprite-about{margin: 0 auto;left:0;top:0}
-  .qrcode-wrap{left:-3%;top:-123px;}
   .sprite-phone{display: none;}
   .more-wrap{position: absolute}
   .more-wrap .as1,.more-wrap .as3{width: 100%}
