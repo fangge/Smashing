@@ -73,7 +73,8 @@ $(function () {
             $('#mask,#more-wrap .more-bg').bind('click',function(){
                 $('#mask,.qrcode-wrap').fadeOut(200);
                 $('#index-wx,#index-yixin').css('z-index','50')
-                $('.pop').fadeOut(200)
+                $('.pop').fadeOut(200);
+                $('#more-wrap').removeClass('mask-more-bg')
             });
             $('#index-wx').click(function(){
                 $(this).css('z-index','101')
@@ -91,6 +92,15 @@ $(function () {
                 $(this).closest('.art-bottom').find('.qrwrap4').stop().fadeIn(100)
                 $('#mask').stop().fadeIn(100)
             })
+            $('#more-wx').click(function(){
+                $('#qrwrap3').stop().fadeIn(100);
+                $('#more-wrap').addClass('mask-more-bg')
+            })
+            $('#more-yx').click(function(){
+                $('#qrwrap4').stop().fadeIn(100);
+                $('#more-wrap').addClass('mask-more-bg')
+            })
+
         },
         /**
          * 分享信息
