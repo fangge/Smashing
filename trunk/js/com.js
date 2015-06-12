@@ -100,14 +100,18 @@ $(function () {
                 intro = encodeURIComponent("超级喜欢的网站，分享给大家，保证很有料哦~！（分享来自@xxxxxxxxxx网）"),
                 url = encodeURIComponent(document.location),
                 pic= encodeURIComponent("http://www.mrfangge.com/bgptv6/img/share.jpg");
-            $('.sprite-index-sina,.sprite-sina').attr('href','//v.t.sina.com.cn/share/share.php?title='+intro+'&url='+url+'&pic='+pic);
+            $('.sprite-index-sina,.sprite-sina,.sina-btn').attr('href','//v.t.sina.com.cn/share/share.php?title='+intro+'&url='+url+'&pic='+pic);
             //$('.sprite-index-yx,.sprite-yixin').attr('href','//open.yixin.im/share?title='+title+'&url='+url+'&pic='+pic+'&desc='+intro)
         },
         init:function(){
             this.scrollShow();
             this.navShow();
             this.wxShow();
-            this.shareInfo()
+            this.shareInfo();
+
+            $('.share-pop').bind('click',function(){
+                showPop('share-pop')
+            })
         }
     }
 
