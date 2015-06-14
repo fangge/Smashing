@@ -37,7 +37,7 @@ $(function () {
                 fmTop='100px';
             }else{
 
-                mTop = '30%';
+                mTop = '25%';
                 fmTop='15%';
             }
             if(scrollY>=fixY){
@@ -70,7 +70,7 @@ $(function () {
          * 微信显示
          */
         wxShow:function(){
-            $('#mask,#more-wrap .more-bg').bind('click',function(){
+            $('#mask,#more-wrap .more-bg,#qrwrap3,#qrwrap4').bind('click',function(){
                 $('#mask,.qrcode-wrap').fadeOut(200);
                 $('#index-wx,#index-yixin').css('z-index','50')
                 $('.pop').fadeOut(200);
