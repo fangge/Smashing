@@ -133,6 +133,7 @@ header{
   position: absolute;right:20px;top:50px;
   a{color: #FF7300;font-size: 58px;font-family: "Impact",Arial,sans-serif}
   i{position: absolute;right: 0;bottom:-84px;}
+  img{display: none;}
 }
 .sprite-about{position: absolute;right:60px;top:140px;}
 .qrcode-wrap{position: absolute;display: none;z-index: 105;
@@ -298,13 +299,16 @@ footer .qrcode-wrap{top:-150px;}
   .hot-img img{width: 100%;display: block}
   .footer-share{
     width: 346px;
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    -o-transform: scale(0.5);
-    transform: scale(0.5);margin: 0 auto;padding: 0;  position: relative;
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -o-transform: scale(0.7);
+    transform: scale(0.7);margin: 0 auto;padding: 0;  position: relative;
     top: 0;
-    left: -25%;}
+    left: 0;
+    li{margin: 0}
+    .center-share{margin: 0 4%;}
+  }
   .qrcode-wrap{
     width: 86%!important;
     background: #fff;
@@ -334,17 +338,20 @@ footer .qrcode-wrap{top:-150px;}
     font-size: 1.06em;text-align: center}
   .phone{  top: -10px;
     right: 0;
-    margin: 7px 0 3px ;
-    width: 100%;
-    text-align: center;
+    margin: 7px auto 54px ;
+    width: 98%;
     transform: none;
-    font-size: 2em;
-    font-weight: 400;
-    a{font-size: 1.05em;}
+    a,i{display: none;}
+    img{display: block;width: 100%;height: auto}
   }
   .sprite-about{  position: absolute;
-    top: 39%;
-    left: 65%;}
+    top: 67%;
+    left:72%;
+    -webkit-transform: scale(.7);
+    -moz-transform: scale(.7);
+    -ms-transform: scale(.7);
+    -o-transform: scale(.7);
+    transform: scale(.7);}
   .sprite-phone{display: none;}
   .more-wrap{position: absolute}
   .more-wrap .as1,.more-wrap .as3{width: 100%}
