@@ -129,7 +129,7 @@ $(function () {
 
 })
 /**
- * 县是弹层
+ * s弹层
  * @param id
  */
 function showPop(id){
