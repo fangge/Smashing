@@ -19,66 +19,7 @@
 <body class="index">
 <!-- 搜索结果 Start-->
 <div class="result-wrap" id="result-wrap">
-    <!-- 图文列表 start-->
-    <div class="search-col g-clr">
-        <a href="#" class="search-title-wrap" target="_blank" title="2015年3月通信运营数据4G用户数达1.6亿">
-            <img src="test.jpg" alt="2015年3月通信运营数据4G用户数达1.6亿" class="search-img"/>
-            <span class="search-title">2015年3月通信运营数据4G用户数达1.6亿</span>
-            <p class="search-intro">工信部近日<strong>发布</strong>3月份通信数据。数据显示，截至3月底，我国4G总用户数达到1.62亿，8M及以上宽带用户占比达46.4%。</p>
-            <span class="search-author">Mr.Kang</span> \ <span class="search-time">昨天下午</span>
-        </a>
-    </div>
-    <!-- 图文列表 end-->
-    <!-- 图文列表 start-->
-    <div class="search-col g-clr">
-        <a href="#" class="search-title-wrap" target="_blank" title="2015年3月通信运营数据4G用户数达1.6亿">
-            <img src="test.jpg" alt="2015年3月通信运营数据4G用户数达1.6亿" class="search-img"/>
-            <span class="search-title">2015年3月通信运营数据4G用户数达1.6亿</span>
-            <p class="search-intro">工信部近日<strong>发布</strong>3月份通信数据。数据显示，截至3月底，我国4G总用户数达到1.62亿，8M及以上宽带用户占比达46.4%。</p>
-            <span class="search-author">Mr.Kang</span> \ <span class="search-time">昨天下午</span>
-        </a>
-    </div>
-    <!-- 图文列表 end-->
-    <!-- 图文列表 start-->
-    <div class="search-col g-clr">
-        <a href="#" class="search-title-wrap" target="_blank" title="2015年3月通信运营数据4G用户数达1.6亿">
-            <img src="test.jpg" alt="2015年3月通信运营数据4G用户数达1.6亿" class="search-img"/>
-            <span class="search-title">2015年3月通信运营数据4G用户数达1.6亿</span>
-            <p class="search-intro">工信部近日<strong>发布</strong>3月份通信数据。数据显示，截至3月底，我国4G总用户数达到1.62亿，8M及以上宽带用户占比达46.4%。</p>
-            <span class="search-author">Mr.Kang</span> \ <span class="search-time">昨天下午</span>
-        </a>
-    </div>
-    <!-- 图文列表 end-->
-    <!-- 图文列表 start-->
-    <div class="search-col g-clr">
-        <a href="#" class="search-title-wrap" target="_blank" title="2015年3月通信运营数据4G用户数达1.6亿">
-            <img src="test.jpg" alt="2015年3月通信运营数据4G用户数达1.6亿" class="search-img"/>
-            <span class="search-title">2015年3月通信运营数据4G用户数达1.6亿</span>
-            <p class="search-intro">工信部近日<strong>发布</strong>3月份通信数据。数据显示，截至3月底，我国4G总用户数达到1.62亿，8M及以上宽带用户占比达46.4%。</p>
-            <span class="search-author">Mr.Kang</span> \ <span class="search-time">昨天下午</span>
-        </a>
-    </div>
-    <!-- 图文列表 end-->
-    <!-- 图文列表 start-->
-    <div class="search-col g-clr">
-        <a href="#" class="search-title-wrap" target="_blank" title="2015年3月通信运营数据4G用户数达1.6亿">
-            <img src="test.jpg" alt="2015年3月通信运营数据4G用户数达1.6亿" class="search-img"/>
-            <span class="search-title">2015年3月通信运营数据4G用户数达1.6亿</span>
-            <p class="search-intro">工信部近日<strong>发布</strong>3月份通信数据。数据显示，截至3月底，我国4G总用户数达到1.62亿，8M及以上宽带用户占比达46.4%。</p>
-            <span class="search-author">Mr.Kang</span> \ <span class="search-time">昨天下午</span>
-        </a>
-    </div>
-    <!-- 图文列表 end-->
-    <!-- 图文列表 start-->
-    <div class="search-col g-clr">
-        <a href="#" class="search-title-wrap" target="_blank" title="2015年3月通信运营数据4G用户数达1.6亿">
-            <img src="test.jpg" alt="2015年3月通信运营数据4G用户数达1.6亿" class="search-img"/>
-            <span class="search-title">2015年3月通信运营数据4G用户数达1.6亿</span>
-            <p class="search-intro">工信部近日<strong>发布</strong>3月份通信数据。数据显示，截至3月底，我国4G总用户数达到1.62亿，8M及以上宽带用户占比达46.4%。</p>
-            <span class="search-author">Mr.Kang</span> \ <span class="search-time">昨天下午</span>
-        </a>
-    </div>
-    <!-- 图文列表 end-->
+
 </div>
 <div id="navigation" class="hide">
     <a>下一页</a>
@@ -91,14 +32,15 @@
 <!-- endbuild -->
 <script>
     $(function () {
-
-        getList(0,"哈哈哈")
+        var i = 0;
+        getList(i,"哈哈哈")
         $(window).scroll(function(){
             var scrollTop = $(this).scrollTop();
             var scrollHeight = $(document).height();
             var windowHeight = $(this).height();
             if(scrollTop + windowHeight == scrollHeight){
-                getList()
+                i++;
+                getList(i,"哈哈哈")
             }
         });
         /**
@@ -114,10 +56,16 @@
                     keyword:str
                  }
                 ,function(data){
-                        var arr = []
+                        var arr = ['']
                        for(var i in data){
-
+                           var list = data[i]
+                            arr.push('<div class="search-col g-clr"><a href="report/'+list.id+'.html" class="search-title-wrap" target="_blank" title="'+list.title+'">')
+                                .push('<img src="'+list.logoUrl+'" alt="'+list.title+'" class="search-img"/>')
+                                .push('<span class="search-title">'+list.title+'</span>')
+                                .push('<p class="search-intro">'+list.summary+'</p>')
+                                .push(' <span class="search-author">'+list.author+'</span> \\ <span class="search-time">'+list.createDate+'</span></div>')
                        }
+                    $('#result-wrap').append(arr.join(''));
                 })
         }
     })
