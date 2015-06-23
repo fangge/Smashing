@@ -12,18 +12,62 @@ $(function () {
     }
 
     var bgFun = {
+        i:0,
+        sinaurl:'',
         /**
          * 滚动效果
          */
         scrollShow:function(){
+
+            var _this = this;
+            //初始化
+            _this.getList(_this.i)
+
             var w = $(window).width();
             $(window).scroll(function(){
-                var t = $(window).scrollTop();
+                var t = $(this).scrollTop(),
+                scrollHeight = $(document).height(),
+               windowHeight = $(this).height();
                 var l
                 w >1200?l=521:l=parseInt($('header').height())
-                bgFun.fixNav(t,l)
+                bgFun.fixNav(t,l);
+
+
+                if(t + windowHeight == scrollHeight){
+                    _this.i++;
+                    _this.getList(_this.i)
+                }
             })
 
+        },
+        /**
+         * 读取新闻列表
+         * @param n 页码
+         */
+        getList:function(n){
+            var _this = this;
+            $.getJSON(
+                "wenyi.yy.com:8080/report/list",
+                {
+                    pageNo:n,
+                    keyword:''
+                }
+                ,function(data){
+                    var arr = []
+                    for(var i in data){
+                        var list = data[i]
+                        arr.push('<div class="art-col"> <a href="report/'+list.id+'.html" class="art-title-wrap" target="_blank" title="'+list.title+'">');
+                        arr.push('<span class="art-time">'+list.createDate+'</span><span class="art-author">'+list.author+'</span>');
+                        arr.push('<span class="art-title">'+list.title+'</span><img src="'+list.logoUrl+'" alt="'+list.title+'" class="art-img"/></a>');
+                        arr.push('<p class="art-intro">'+list.summary+'</p>');
+                        arr.push('<div class="art-bottom"><div class="art-tag"><i class="sprite sprite-tag"></i>');
+                        for(var j in list.tags){
+                            arr.push('<i>'+list.tags[j]+'</i>');
+                        }
+                        arr.push('</div><div class="art-share"><i>分享</i><a class="sprite sprite-sina" target="_blank" href="'+_this.sinaurl+'"></a><a class="sprite sprite-weixin"></a><a class="sprite sprite-yixin"></a></div> <div class="qrcode-wrap sprite sprite-qrwrap qrwrap3"> <p>分享到微信</p> <blockquote>请用微信<strong>“扫一扫”</strong>二维码，即可分享</blockquote> <img src="img/wx-qrcode.jpg"/> </div> <div class="qrcode-wrap sprite sprite-qrwrap qrwrap4"> <p>分享到易信</p> <blockquote>请用易信<strong>“扫一扫”</strong>二维码，即可分享</blockquote> <img src="img/yx-qrcode.jpg"/> </div> </div> </div>')
+                    }
+                    $('#index-list-wrap').append(arr.join(''));
+                })
         },
         /**
          * 滚动判断
@@ -84,11 +128,11 @@ $(function () {
                 $(this).css('z-index','101')
                 setTimeout(function(){$('#mask,#qrwrap2').stop().fadeIn(100);},420)
             })
-            $('.sprite-weixin').click(function(){
+            $('#index-list-wrap').on('click','.sprite-weixin',function(){
                 $(this).closest('.art-bottom').find('.qrwrap3').stop().fadeIn(100)
                 $('#mask').stop().fadeIn(100)
             })
-            $('.sprite-yixin').click(function(){
+            $('#index-list-wrap').on('click','.sprite-yixin',function(){
                 $(this).closest('.art-bottom').find('.qrwrap4').stop().fadeIn(100)
                 $('#mask').stop().fadeIn(100)
             })
@@ -110,15 +154,15 @@ $(function () {
                 intro = encodeURIComponent("超级喜欢的网站，分享给大家，保证很有料哦~！（分享来自@xxxxxxxxxx网）"),
                 url = encodeURIComponent(document.location),
                 pic= encodeURIComponent("http://www.mrfangge.com/bgptv6/img/share.jpg");
+            this.sinaurl = '//v.t.sina.com.cn/share/share.php?title='+intro+'&url='+url+'&pic='+pic;
             $('.sprite-index-sina,.sprite-sina,.sina-btn').attr('href','//v.t.sina.com.cn/share/share.php?title='+intro+'&url='+url+'&pic='+pic);
             //$('.sprite-index-yx,.sprite-yixin').attr('href','//open.yixin.im/share?title='+title+'&url='+url+'&pic='+pic+'&desc='+intro)
         },
         init:function(){
-            this.scrollShow();
-            this.navShow();
             this.wxShow();
             this.shareInfo();
-
+            this.scrollShow();
+            this.navShow();
             $('.share-pop').bind('click',function(){
                 showPop('share-pop')
             })
