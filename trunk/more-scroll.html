@@ -27,20 +27,28 @@
 <!-- 搜索结果 End-->
 <!-- build:js js/main.js?rel=@@timestamp -->
 <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
-<script src="js/jquery.nicescroll.min.js" type="text/javascript"></script>
-<script src="js/com.js" type="text/javascript"></script>
 <!-- endbuild -->
 <script>
+    function getQueryString(name) {//获取传导参数
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return decodeURIComponent(r[2]);
+        return null;
+    }
+
     $(function () {
-        var i = 0;
-        getList(i,"哈哈哈")
+        var i = 0,
+            key = getQueryString('keyword');
+        //初始化第一页
+        getList(i,key)
+        //滚动加载判断
         $(window).scroll(function(){
             var scrollTop = $(this).scrollTop();
             var scrollHeight = $(document).height();
             var windowHeight = $(this).height();
             if(scrollTop + windowHeight == scrollHeight){
                 i++;
-                getList(i,"哈哈哈")
+                getList(i,key)
             }
         });
         /**
@@ -52,21 +60,22 @@
             $.getJSON(
                 "http://wenyi.yy.com:8080/report/list",
                 {
-                    pageNo:n,
+                   pageNo:n,
                     keyword:str
                  }
                 ,function(data){
-                        var arr = ['']
+                        var arr = []
                        for(var i in data){
                            var list = data[i]
-                            arr.push('<div class="search-col g-clr"><a href="report/'+list.id+'.html" class="search-title-wrap" target="_blank" title="'+list.title+'">')
-                                .push('<img src="'+list.logoUrl+'" alt="'+list.title+'" class="search-img"/>')
-                                .push('<span class="search-title">'+list.title+'</span>')
-                                .push('<p class="search-intro">'+list.summary+'</p>')
-                                .push(' <span class="search-author">'+list.author+'</span> \\ <span class="search-time">'+list.createDate+'</span></div>')
+                            arr.push('<div class="search-col g-clr"><a href="report/'+list.id+'.html" class="search-title-wrap" target="_blank" title="'+list.title+'">');
+							arr.push('<img src="'+list.logoUrl+'" alt="'+list.title+'" class="search-img"/>');
+							arr.push('<span class="search-title">'+list.title+'</span>');
+							arr.push('<p class="search-intro">'+list.summary+'</p>');
+							arr.push(' <span class="search-author">'+list.author+'</span> \\ <span class="search-time">'+list.createDate+'</span></div>');
                        }
                     $('#result-wrap').append(arr.join(''));
                 })
+
         }
     })
 </script>

@@ -70,7 +70,7 @@ $(function () {
          * 微信显示
          */
         wxShow:function(){
-            $('#mask,#more-wrap .more-bg,#qrwrap3,#qrwrap4').bind('click',function(){
+            $('#mask,#more-wrap .more-bg,#qrwrap3,#qrwrap4,.pop-close-btn,.pop-close').bind('click',function(){
                 $('#mask,.qrcode-wrap').fadeOut(200);
                 $('#index-wx,#index-yixin').css('z-index','50')
                 $('.pop').fadeOut(200);
@@ -122,6 +122,8 @@ $(function () {
             $('.share-pop').bind('click',function(){
                 showPop('share-pop')
             })
+
+
         }
     }
 

@@ -190,7 +190,8 @@ footer .qrcode-wrap{top:-150px;}
   .search-txt::-moz-placeholder{color: #B5B5B6;}
   .nav-col h2{margin: 0 0 33px}
 }
-.result-wrap{width:760px;height:auto;margin: 0 auto}
+#more-frame{width: 101%;overflow-y: scroll}
+.result-wrap{width:760px;height:auto;}
 .search-col{width: 442+296+20px;margin-bottom: 60px;}
 .search-img{float:left;margin-right: 20px}
 .search-title{font-size: 22px;color: #3E3A39;display: block;margin-bottom: 22px;}
@@ -202,6 +203,7 @@ footer .qrcode-wrap{top:-150px;}
   position: fixed;left:50%;top:50%;z-index: 999;background: #fff;display: none;
   .pop-btn{display: block;margin: 20px auto;width: 260px;height: 50px;line-height: 50px;color: #fff;background: #F2C526;text-align: center;font-size: 24px;cursor:pointer}
   .pop-btn:hover{background: #f6a717}
+  .pop-close-btn{position: absolute;right: 10px;top:10px;cursor: pointer}
 }
 .pop1{
   width: 542px;padding:0 75px;;margin-left: -346px;
@@ -219,7 +221,7 @@ footer .qrcode-wrap{top:-150px;}
 .pop2{
   width: 500px;padding:0 75px;margin-left: -325px;height: 320px;margin-top: -160px;
   .suc-wrap{width:457px;height:113px;padding-bottom: 34px;border-bottom: 1px solid #F9A717;margin: 65px auto 0;position: relative}
-  .sprite{position: absolute;top:0;left:0}
+  .sprite-dysuc{position: absolute;top:0;left:0}
   h2{color: #F9A818;font-size: 48px;position: absolute;left:120px;top:0}
   p{color: #9FA0A0;font-size: 24px;line-height: 24px;position: absolute;left:120px;top:62px;}
 }
@@ -231,7 +233,7 @@ footer .qrcode-wrap{top:-150px;}
 }
 #qrwrap3{  top: 214px;  left: 440px;}
 #qrwrap4{  top: 312px;  left: 440px;}
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1201px) {
   footer{height: 186px;}
   #wrap{width:100%;min-width:100%;}
   .main{width:auto;margin:0 3.333% }
@@ -369,5 +371,17 @@ footer .qrcode-wrap{top:-150px;}
   .search-intro{margin: 0}
   .index .mail-area i{float:left;}
   .index .mail-area .mail-txt{float:left;width: 75%;}
+  #more-frame{width: 100%;}
+  .pop{width: 95%;margin: 0;padding: 0;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    -ms-transform: translate3d(-50%, -50%, 0);
+    -o-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);}
+  .pop2 .suc-wrap,.pop1 .mail-list li{width: 92%;}
+  .pop2 h2,.pop1 .pop-title{font-size: 2.8em}
+  .pop2 p{font-size: 1.3em}
+  .pop3 .pop-btn{margin: 0 auto;display: block}
+  .pop3 .pop-close{text-align: center;display: block;margin-top: 10px;}
 }
 #search-num{font-style: normal}
