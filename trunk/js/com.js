@@ -56,7 +56,7 @@ $(function () {
                     var arr = []
                     for(var i in data){
                         var list = data[i]
-                        arr.push('<div class="art-col"> <a href="report/'+list.id+'.html" class="art-title-wrap" target="_blank" title="'+list.title+'">');
+                        arr.push('<div class="art-col art-'+list.id+'"> <a href="report/'+list.id+'.html" class="art-title-wrap" target="_blank" title="'+list.title+'">');
                         arr.push('<span class="art-time">'+list.createDate+'</span><span class="art-author">'+list.author+'</span>');
                         arr.push('<span class="art-title">'+list.title+'</span><img src="'+list.logoUrl+'" alt="'+list.title+'" class="art-img"/></a>');
                         arr.push('<p class="art-intro">'+list.summary+'</p>');
@@ -64,9 +64,17 @@ $(function () {
                         for(var j in list.tags){
                             arr.push('<i>'+list.tags[j]+'</i>');
                         }
-                        arr.push('</div><div class="art-share"><i>分享</i><a class="sprite sprite-sina" target="_blank" href="'+_this.sinaurl+'"></a><a class="sprite sprite-weixin"></a><a class="sprite sprite-yixin"></a></div> <div class="qrcode-wrap sprite sprite-qrwrap qrwrap3"> <p>分享到微信</p> <blockquote>请用微信<strong>“扫一扫”</strong>二维码，即可分享</blockquote> <img src="img/wx-qrcode.jpg"/> </div> <div class="qrcode-wrap sprite sprite-qrwrap qrwrap4"> <p>分享到易信</p> <blockquote>请用易信<strong>“扫一扫”</strong>二维码，即可分享</blockquote> <img src="img/yx-qrcode.jpg"/> </div> </div> </div>')
+                        arr.push('</div><div class="art-share"><i>分享</i><a class="sprite sprite-sina" target="_blank" href="'+_this.sinaurl+'"></a><a class="sprite sprite-weixin"></a><a class="sprite sprite-yixin"></a></div> <div class="qrcode-wrap sprite sprite-qrwrap qrwrap3"> <p>分享到微信</p> <blockquote>请用微信<strong>“扫一扫”</strong>二维码，即可分享</blockquote> <div class="img-qrcode wx-qrcode"></div> </div> <div class="qrcode-wrap sprite sprite-qrwrap qrwrap4"> <p>分享到易信</p> <blockquote>请用易信<strong>“扫一扫”</strong>二维码，即可分享</blockquote> <div class="img-qrcode yx-qrcode"></div> </div> </div> </div>')
                     }
                     $('#index-list-wrap').append(arr.join(''));
+                    $(".art-"+list.id).find('.wx-qrcode').qrcode({
+                        size:128,
+                        text:"report/"+list.id+".html"
+                    })
+                    $(".art-"+list.id).find('.yx-qrcode').qrcode({
+                        size:128,
+                        text:"report/"+list.id+".html"
+                    })
                 })
         },
         /**
@@ -155,13 +163,13 @@ $(function () {
                 url = encodeURIComponent(document.location),
                 pic= encodeURIComponent("http://www.mrfangge.com/bgptv6/img/share.jpg");
             this.sinaurl = '//v.t.sina.com.cn/share/share.php?title='+intro+'&url='+url+'&pic='+pic;
-            $('.sprite-index-sina,.sprite-sina,.sina-btn').attr('href','//v.t.sina.com.cn/share/share.php?title='+intro+'&url='+url+'&pic='+pic);
+            $('.sprite-index-sina,.sprite-sina,.sina-btn,.more-share-sina').attr('href','//v.t.sina.com.cn/share/share.php?title='+intro+'&url='+url+'&pic='+pic);
             //$('.sprite-index-yx,.sprite-yixin').attr('href','//open.yixin.im/share?title='+title+'&url='+url+'&pic='+pic+'&desc='+intro)
         },
         init:function(){
             this.wxShow();
             this.shareInfo();
-            this.scrollShow();
+            //this.scrollShow();
             this.navShow();
             $('.share-pop').bind('click',function(){
                 showPop('share-pop')
